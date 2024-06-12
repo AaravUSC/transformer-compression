@@ -12,8 +12,10 @@ After cloning the repository, install the requirements:
 This repository applies Domain-Adaptive SVD Compression to [wav2vec2.0](https://arxiv.org/abs/2006.11477) using the Librispeech dataset. The example provided in main.py uses only 20 utterances for compression and tests a single example for the sake of usability on CPU. In practise, using at least 200 utterances to compress is recommended for domain-adaptation.
 
 To compress, run the following command:
-> $ python main.py --layers='9 10 11 12' --compression='3' --dir_source='data'
+> $ python main.py --layers='9 10 11 12' --compression=3 --lambda=0.1
 > 
-  >> **base**: 'unimodal' or 'multi[clip]': whether baseline model to generate transcripts is unimodal (only uses audio) or multimodal (uses audio & image)
+  >> **layers**: A space-separated list of numbers between 1 and 12 (inclusive), indicating the layers of the model that will be compressed
 >  > 
-  >> **noise**: 'mix_clean' or 'mix_mask_1.0_nouns' or 'mix_mask_0.4_all': noise setting used to train base model and reranker; of the form (speaker-type)\_(noise-type)\_(proportion-of-tgt-masked)\_(target-words)
+  >> **compression**: A value indicating the degree to which the selected layers will be compressed. Recommended: 3.
+>  >
+>  > **lambda**: A regularization parameter. Recommended: 0.1.
