@@ -1,8 +1,7 @@
 import torch
 import torchaudio
 import numpy as np
-from utils.encoder import _get_encoder
-import utils.components
+import utils.encoder
 import utils.transformations
 
 def extract_activations(waveforms, model):
