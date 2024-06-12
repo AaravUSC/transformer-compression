@@ -13,9 +13,7 @@ This repository applies Domain-Adaptive SVD Compression to [wav2vec2.0](https://
 
 To compress, run the following command:
 > $ python main.py --layers='9 10 11 12' --compression=3 --lambda=0.1
-> 
-  >> **layers**: A space-separated list of numbers between 1 and 12 (inclusive), indicating the layers of the model that will be compressed
->  > 
-  >> **compression**: A value indicating the degree to which the selected layers will be compressed. Recommended: 3.
->  >
->  > **lambda**: A regularization parameter. Recommended: 0.1.
+
+**layers**: A space-separated list of numbers between 1 and 12 (inclusive), indicating the layers of the model that will be compressed
+**compression**: A value indicating the degree to which the selected layers will be compressed. Recommended: 3.
+**lambda**: A regularization parameter. Recommended: 0.1.
